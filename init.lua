@@ -59,7 +59,11 @@ return require('packer').startup{function()
         run = ':TSUpdate',
         config = [[ require('plugins/treesitter') ]]
   }
-    
+	use { -- A super powerful autopairs for Neovim. It support multiple character.
+       'windwp/nvim-autopairs',
+       config = [[ require('plugins/autopairs') ]]
+	}
+
 end, config = {
   -- Move to lua dir so impatient.nvim can cache it
   compile_path = vim.fn.stdpath('config')..'/plugin/packer_compiled.lua'
